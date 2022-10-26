@@ -3,10 +3,8 @@ package org.redbee.adapter.`in`.controller
 import org.redbee.adapter.`in`.controller.model.DigimonRequest
 import org.redbee.application.port.`in`.CreateDigimonCommand
 import org.slf4j.LoggerFactory
-import javax.ws.rs.Consumes
 import javax.ws.rs.POST
 import javax.ws.rs.Path
-import javax.ws.rs.core.MediaType
 import javax.ws.rs.core.Response
 
 @Path("/api/v1/digimons")

@@ -9,8 +9,8 @@ class CreateDigimonUseCase() : CreateDigimonCommand {
     private val log = LoggerFactory.getLogger(this::class.java)
 
     override fun execute(command: CreateDigimonCommand.Command): Unit {
-        log.info("Ejecutando caso de uso de creacion de pokemon")
+        log.info("Ejecutando caso de uso de creacion de digimon :${command.toString()}")
         //vamo a darle al repository
-        log.info("Pokemon creado con exito")
+        log.info("Digimon creado con exito")
     }
 }

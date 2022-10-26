@@ -9,14 +9,10 @@ import com.fasterxml.jackson.databind.annotation.JsonNaming
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy::class)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 class DigimonRequest(
-    private var name: String
+    private var name: String = ""
 ) {
     fun getName() : String{
         return this.name
-    }
-
-    fun setName(name : String) : Unit {
-        this.name = name
     }
 
     override fun toString(): String {
