@@ -16,12 +16,12 @@ class PokemonRestAdapter() : PokemonRepository{
     private val log = LoggerFactory.getLogger(this::class.java)
 
     override fun get(name: String): Pokemon {
-        log.info("Ejecutando caso de uso de obtener pokemon con nombre:$name")
+        log.info("Obteniendo pokemon con nombre:$name")
         val client: Client = ClientBuilder.newBuilder().build()
         val url = "https://pokeapi.co/api/v2/pokemon/${name}"
         val pokemonResult: PokemonRestModel = client.target(url).request().get<PokemonRestModel>(object : GenericType<PokemonRestModel?>() {})
         val pokemon = pokemonResult.toDomain()
-        log.info("Ejecutando caso de uso de obtener pokemon con nombre:$name")
+        log.info("Pokemon obtenido:${pokemon.toString()}")
 
         return pokemon
     }
