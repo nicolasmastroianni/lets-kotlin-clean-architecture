@@ -29,9 +29,9 @@ class PokemonResponse(
 
     companion object {
         fun fromDomain(pokemon : Pokemon) : PokemonResponse{
-            return PokemonResponse(pokemon.getName(),
-                pokemon.getAbilities(),
-                pokemon.getTypes())
+            return PokemonResponse(pokemon.name,
+                pokemon.abilities,
+                pokemon.types)
         }
     }
 

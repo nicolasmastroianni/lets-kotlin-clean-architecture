@@ -22,6 +22,10 @@ dependencies {
     implementation("io.quarkus:quarkus-resteasy-reactive")
     testImplementation("io.quarkus:quarkus-junit5")
     testImplementation("io.rest-assured:rest-assured")
+
+    // Arch unit
+    testImplementation("com.tngtech.archunit:archunit:0.14.1")
+    testImplementation("com.tngtech.archunit:archunit-junit5:0.14.1")
 }
 
 group = "org.redbee"
