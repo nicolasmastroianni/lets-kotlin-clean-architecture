@@ -26,6 +26,10 @@ dependencies {
     // Arch unit
     testImplementation("com.tngtech.archunit:archunit:0.14.1")
     testImplementation("com.tngtech.archunit:archunit-junit5:0.14.1")
+
+    // OpenTelemetry
+    implementation("io.quarkus:quarkus-opentelemetry")
+
 }
 
 group = "org.redbee"
