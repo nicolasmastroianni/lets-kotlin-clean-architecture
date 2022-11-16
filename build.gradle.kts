@@ -24,6 +24,13 @@ dependencies {
     implementation("io.quarkus:quarkus-rest-client-jackson")
     testImplementation("io.quarkus:quarkus-junit5")
     testImplementation("io.rest-assured:rest-assured")
+
+    // Arch unit
+    testImplementation("com.tngtech.archunit:archunit:0.14.1")
+    testImplementation("com.tngtech.archunit:archunit-junit5:0.14.1")
+    //swagger
+    implementation("io.quarkus:quarkus-smallrye-openapi")
+
 }
 
 group = "org.redbee"
