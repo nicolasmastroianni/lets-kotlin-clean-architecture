@@ -25,8 +25,11 @@ dependencies {
     implementation("io.quarkus:quarkus-hibernate-orm-panache-kotlin")
     implementation("io.quarkus:quarkus-jdbc-h2:2.9.2.Final")
     implementation("io.quarkus:quarkus-config-yaml")
+    //swagger
+    implementation("io.quarkus:quarkus-smallrye-openapi")
     testImplementation("io.quarkus:quarkus-junit5")
     testImplementation("io.rest-assured:rest-assured")
+
 }
 
 group = "org.redbee"
