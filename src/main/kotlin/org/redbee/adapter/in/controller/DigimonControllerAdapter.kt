@@ -17,7 +17,6 @@ class DigimonControllerAdapter(
     private val getDigimonByNameQuery: GetDigimonByNameQuery
 ) {
     private val log = LoggerFactory.getLogger(this::class.java)
-
     @POST
     fun create(body : DigimonRequest) : Response {
         log.info("Se llama a api para creacion digimon con body :${body.toString()}")

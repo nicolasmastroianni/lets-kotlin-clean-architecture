@@ -2,11 +2,10 @@ package org.redbee.application.usecase
 
 import org.redbee.application.port.`in`.GetDigimonByNameQuery
 import org.redbee.application.port.out.GetDigimonByNameRepository
-import org.redbee.application.port.out.PokemonRepository
 import org.redbee.application.usecase.model.Digimon
-import org.redbee.application.usecase.model.Pokemon
 import org.slf4j.LoggerFactory
 import javax.enterprise.context.ApplicationScoped
+import javax.inject.Named
 
 @ApplicationScoped
 class GetDigimonByNameUseCase(

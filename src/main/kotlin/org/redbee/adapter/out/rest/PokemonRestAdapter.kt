@@ -6,10 +6,12 @@ import org.redbee.application.port.out.PokemonRepository
 import org.redbee.application.usecase.model.Pokemon
 import org.slf4j.LoggerFactory
 import javax.enterprise.context.ApplicationScoped
+import javax.inject.Named
 import javax.ws.rs.client.Client
 import javax.ws.rs.client.ClientBuilder
 import javax.ws.rs.core.GenericType
 
+@Named("pokemonSource")
 @ApplicationScoped
 @RegisterRestClient
 class PokemonRestAdapter() : PokemonRepository{
