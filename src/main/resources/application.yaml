@@ -25,3 +25,7 @@ quarkus:
     resources:
       includes: sql/*.sql
     additional-build-args: -H:ResourceConfigurationFiles=resources-config.json
+
+    quarkus:
+      smallrye-openapi:
+        path: /swagger

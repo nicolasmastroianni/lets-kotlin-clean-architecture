@@ -29,8 +29,10 @@ dependencies {
     implementation("io.quarkus:quarkus-hibernate-validator")
     implementation("io.quarkus:quarkus-config-yaml")
     implementation("io.quarkus:quarkus-spring-cloud-config-client")
+    implementation("io.quarkus:quarkus-smallrye-openapi")
     testImplementation("io.quarkus:quarkus-junit5")
     testImplementation("io.rest-assured:rest-assured")
+
 }
 
 group = "org.redbee"
