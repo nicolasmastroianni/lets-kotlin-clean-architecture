@@ -8,7 +8,6 @@ import javax.enterprise.context.ApplicationScoped
 import javax.inject.Named
 
 @ApplicationScoped
-
 class GetPokemonByNameUseCase(
     @Named("pokemonSource") private val pokemonSourceRepository : PokemonRepository,
     @Named("pokemonResource") private val pokemonResourceRepository : PokemonRepository
@@ -23,7 +22,7 @@ class GetPokemonByNameUseCase(
         val pokemonResponse = Pokemon(pokemon.name,
             pokemon.abilities,
             pokemonComplement.types)
-        log.info("Pokemon obtenido:${pokemonResponse.toString()}")
+        log.info("Pokemon obtenido:${pokemonResponse}")
 
         return pokemonResponse
     }
