@@ -35,7 +35,7 @@ dependencies {
     testImplementation("io.rest-assured:rest-assured")
 
     // Ktlint
-    ktlint("com.pinterest:ktlint:0.40.0")
+    ktlint("com.pinterest:ktlint:0.47.1")
 
     // Arch unit
     testImplementation("com.tngtech.archunit:archunit:0.14.1")

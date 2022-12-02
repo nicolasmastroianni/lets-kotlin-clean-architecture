@@ -1,9 +1,6 @@
 package org.redbee.config
 
-import com.payway.bin_validator.model.ErrorDto
-import io.quarkus.hibernate.validator.runtime.jaxrs.ResteasyReactiveViolationException
 import javax.enterprise.context.ApplicationScoped
-import org.jboss.resteasy.reactive.RestResponse
 
 @ApplicationScoped
 class ErrorMapper {

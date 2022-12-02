@@ -14,14 +14,14 @@ class CreateDigimonUseCase(
 
     private val EMPTY_LEVELS = ""
 
-    override fun execute(command: CreateDigimonCommand.Command): Unit {
-        log.info("Ejecutando caso de uso de creacion de digimon :${command.toString()}")
+    override fun execute(command: CreateDigimonCommand.Command) {
+        log.info("Ejecutando caso de uso de creacion de digimon :$command")
         val digimonToCreate = buildDigimon(command)
         createDigimonRepository.execute(digimonToCreate)
         log.info("Digimon creado con exito")
     }
 
-    private fun buildDigimon(command : CreateDigimonCommand.Command) : Digimon {
+    private fun buildDigimon(command: CreateDigimonCommand.Command): Digimon {
         return Digimon(command.getName(), EMPTY_LEVELS)
     }
 }

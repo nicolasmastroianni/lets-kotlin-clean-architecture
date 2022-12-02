@@ -8,22 +8,23 @@ import javax.enterprise.context.ApplicationScoped
 import javax.inject.Named
 
 @ApplicationScoped
-
 class GetPokemonByNameUseCase(
-    @Named("pokemonSource") private val pokemonSourceRepository : PokemonRepository,
-    @Named("pokemonResource") private val pokemonResourceRepository : PokemonRepository
+    @Named("pokemonSource") private val pokemonSourceRepository: PokemonRepository,
+    @Named("pokemonResource") private val pokemonResourceRepository: PokemonRepository
 ) : GetPokemonByNameQuery {
 
     private val log = LoggerFactory.getLogger(this::class.java)
 
-    override fun execute(name : String): Pokemon {
+    override fun execute(name: String): Pokemon {
         log.info("Ejecutando caso de uso de obtener pokemon con nombre:$name")
         val pokemon = pokemonSourceRepository.get(name)
         val pokemonComplement = pokemonResourceRepository.get(name)
-        val pokemonResponse = Pokemon(pokemon.name,
+        val pokemonResponse = Pokemon(
+            pokemon.name,
             pokemon.abilities,
-            pokemonComplement.types)
-        log.info("Pokemon obtenido:${pokemonResponse.toString()}")
+            pokemonComplement.types
+        )
+        log.info("Pokemon obtenido:$pokemonResponse")
 
         return pokemonResponse
     }

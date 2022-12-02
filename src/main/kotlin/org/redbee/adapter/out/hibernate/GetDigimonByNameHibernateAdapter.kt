@@ -1,12 +1,9 @@
 package org.redbee.adapter.out.hibernate
 
-import org.redbee.adapter.out.hibernate.model.DigimonHibernateModel
 import org.redbee.application.port.out.GetDigimonByNameRepository
 import org.redbee.application.usecase.model.Digimon
 import org.slf4j.LoggerFactory
 import javax.enterprise.context.ApplicationScoped
-import javax.inject.Named
-import javax.persistence.EntityManager
 
 @ApplicationScoped
 class GetDigimonByNameHibernateAdapter(
@@ -26,6 +23,6 @@ class GetDigimonByNameHibernateAdapter(
         log.info("Digimon obtenido: ${digimon}")
 
         return digimon*/
-        return Digimon("","")
+        return Digimon("", "")
     }
 }

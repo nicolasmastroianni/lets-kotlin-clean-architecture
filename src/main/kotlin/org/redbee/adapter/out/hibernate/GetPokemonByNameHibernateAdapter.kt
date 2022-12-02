@@ -10,7 +10,6 @@ import org.redbee.application.port.out.PokemonRepository
 import org.redbee.application.usecase.model.Pokemon
 import org.redbee.config.ErrorDescription
 import org.slf4j.LoggerFactory
-import java.util.*
 import javax.enterprise.context.ApplicationScoped
 import javax.inject.Named
 import javax.persistence.EntityExistsException
@@ -32,7 +31,7 @@ class GetPokemonByNameHibernateAdapter(
                 .createNativeQuery(getPokemonByName, PokemonHibernateModel::class.java)
                 .setParameter("NAME", name)
                 .singleResult as PokemonHibernateModel
-            log.info("Pokemon obtenido: ${pokemonResult}")
+            log.info("Pokemon obtenido: $pokemonResult")
 
             return pokemonResult.toDomain()
         } catch (exception: NoResultException) {

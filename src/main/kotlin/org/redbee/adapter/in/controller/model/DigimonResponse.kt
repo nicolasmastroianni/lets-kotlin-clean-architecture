@@ -11,19 +11,21 @@ import org.redbee.application.usecase.model.Digimon
 @JsonInclude(JsonInclude.Include.NON_NULL)
 class DigimonResponse(
     private val name: String,
-    private val level: String,
+    private val level: String
 ) {
-    fun getName() : String{
+    fun getName(): String {
         return this.name
     }
-    fun getLevel() : String{
+    fun getLevel(): String {
         return this.level
     }
 
     companion object {
-        fun fromDomain(digimon : Digimon) : DigimonResponse{
-            return DigimonResponse(digimon.getName(),
-                digimon.getLevel())
+        fun fromDomain(digimon: Digimon): DigimonResponse {
+            return DigimonResponse(
+                digimon.getName(),
+                digimon.getLevel()
+            )
         }
     }
 
