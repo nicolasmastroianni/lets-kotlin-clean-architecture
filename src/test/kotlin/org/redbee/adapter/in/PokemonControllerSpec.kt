@@ -11,9 +11,10 @@ class PokemonControllerSpec {
     @Test
     fun testHelloEndpoint() {
         given()
-            .`when`().get("/api/v1/pokemons/pikachu")
-            .then()
-            .statusCode(200)
-            .body(`is`("{\"name\":\"sarasa\",\"abilities\":[\"sarasa2\"],\"types\":[\"sarasa3\"]}"))
+          .`when`().get("/api/v1/pokemons/pikachu")
+          .then()
+             .statusCode(200)
+             .body(`is`("{\"name\":\"sarasa\",\"abilities\":[\"sarasa2\"],\"types\":[\"sarasa3\"]}"))
     }
+
 }

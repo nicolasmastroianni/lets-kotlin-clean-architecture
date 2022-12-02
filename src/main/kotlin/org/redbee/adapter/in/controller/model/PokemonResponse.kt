@@ -6,6 +6,7 @@ import com.fasterxml.jackson.databind.PropertyNamingStrategies
 import com.fasterxml.jackson.databind.annotation.JsonNaming
 import org.redbee.application.usecase.model.Pokemon
 
+
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy::class)
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -14,25 +15,23 @@ class PokemonResponse(
     private val abilities: List<String>,
     private val types: List<String>
 ) {
-    fun getName(): String {
+    fun getName() : String{
         return this.name
     }
 
-    fun getAbilities(): List<String> {
+    fun getAbilities() : List<String>{
         return this.abilities
     }
 
-    fun getTypes(): List<String> {
+    fun getTypes() : List<String>{
         return this.types
     }
 
     companion object {
-        fun fromDomain(pokemon: Pokemon): PokemonResponse {
-            return PokemonResponse(
-                pokemon.name,
+        fun fromDomain(pokemon : Pokemon) : PokemonResponse{
+            return PokemonResponse(pokemon.name,
                 pokemon.abilities,
-                pokemon.types
-            )
+                pokemon.types)
         }
     }
 
