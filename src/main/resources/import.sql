@@ -7,4 +7,6 @@
 */
 INSERT INTO pokemons (name, ability, type)
 VALUES ('abra','saraseador','sarasero');
+INSERT INTO pokemons (name, ability, type)
+VALUES ('charizard','hace cosas','ese');
 
