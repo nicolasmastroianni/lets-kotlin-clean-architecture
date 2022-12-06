@@ -1,7 +1,9 @@
 quarkus:
   http:
     port: 9000
-
+  redis:
+    hosts: redis://localhost:6379/
+    duration: 100000
   datasource:
     db-kind: h2
     username: sa
@@ -19,7 +21,7 @@ quarkus:
 
   rest-client:
     pokemon:
-      url: https://pokeapi.co/api/v2/pokemon/
+      url: https://pokeapi.co/api/v2/pokemon
 
   native:
     resources:
