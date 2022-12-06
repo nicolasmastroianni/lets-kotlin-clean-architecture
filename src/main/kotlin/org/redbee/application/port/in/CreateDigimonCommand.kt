@@ -9,5 +9,9 @@ interface CreateDigimonCommand {
         fun getName() : String {
             return this.name
         }
+
+        override fun toString(): String {
+            return "Command(name='$name')"
+        }
     }
 }
