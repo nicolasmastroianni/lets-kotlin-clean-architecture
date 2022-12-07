@@ -13,9 +13,9 @@ import javax.inject.Named
 class GetPokemonByNameRedisAdapter(
     ds: RedisDataSource
 ): GetPokemonByNameRepository{
-
     private val log = LoggerFactory.getLogger(this::class.java)
     private val commands: ValueCommands<String, Pokemon> = ds.value(String::class.java, Pokemon::class.java)
+
     override fun execute(name: String): Pokemon? {
         log.info("Obteniendo pokemon por nombre: ${name}")
         val pokemon = commands.get(name)

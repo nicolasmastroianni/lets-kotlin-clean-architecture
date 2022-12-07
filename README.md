@@ -61,3 +61,9 @@ Easily start your Reactive RESTful Web Services
 
 - Swagger Documentation([guide](https://es.quarkus.io/guides/openapi-swaggerui)): view quarkus swagger info.
 
+Pasos para levantar el proyecto
+
+1) Levantar Redis en el puerto indicado en el application.yaml
+2) los pokemons que te va a traer son los que estan puestos en los INSERTS en el archivo
+import.sql, mas alla que encuentre en el web service, el ejemplo se hizo a proposito para
+combinar las distintas a tecnologias
