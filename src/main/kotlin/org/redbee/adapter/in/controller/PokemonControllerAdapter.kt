@@ -12,8 +12,8 @@ import javax.ws.rs.core.Response
 
 @Path("/api/v1/pokemons")
 class PokemonControllerAdapter(
-    private val getPokemonByNameQuery: GetPokemonByNameQuery,
-    ) {
+    private val getPokemonByNameQuery: GetPokemonByNameQuery
+) {
 
     private val log = LoggerFactory.getLogger(this::class.java)
 
@@ -29,6 +29,5 @@ class PokemonControllerAdapter(
     }
 
     @ServerExceptionMapper
-    fun mapException(e : Throwable) :Response = ErrorHandler.mapException(e)
-
+    fun mapException(e: Throwable): Response = ErrorHandler.mapException(e)
 }

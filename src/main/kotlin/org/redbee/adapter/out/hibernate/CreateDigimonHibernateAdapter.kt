@@ -7,6 +7,6 @@ import javax.enterprise.context.ApplicationScoped
 @ApplicationScoped
 class CreateDigimonHibernateAdapter : CreateDigimonRepository {
     override fun execute(digimon: Digimon) {
-        //TODO: Implementar la funcion
+        // TODO: Implementar la funcion
     }
 }
