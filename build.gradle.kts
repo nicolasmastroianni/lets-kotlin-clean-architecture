@@ -22,6 +22,7 @@ dependencies {
     implementation("io.quarkus:quarkus-arc")
     implementation("io.quarkus:quarkus-smallrye-health")
     implementation("io.quarkus:quarkus-opentelemetry-exporter-otlp")
+    implementation("io.quarkus:quarkus-redis-client")
     implementation("io.quarkus:quarkus-resteasy-reactive")
     implementation("io.quarkus:quarkus-rest-client")
     implementation("io.quarkus:quarkus-rest-client-jackson")

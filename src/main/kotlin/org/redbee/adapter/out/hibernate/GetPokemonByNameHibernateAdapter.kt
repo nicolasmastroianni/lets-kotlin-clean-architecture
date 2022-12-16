@@ -6,7 +6,7 @@ import org.redbee.adapter.exception.NotFoundException
 import org.redbee.adapter.exception.UnprocessableException
 import org.redbee.adapter.out.hibernate.model.PokemonHibernateModel
 import org.redbee.adapter.out.hibernate.utils.FileReader
-import org.redbee.application.port.out.PokemonRepository
+import org.redbee.application.port.out.GetPokemonByNameRepository
 import org.redbee.application.usecase.model.Pokemon
 import org.redbee.config.ErrorDescription
 import org.slf4j.LoggerFactory
@@ -21,10 +21,10 @@ import javax.persistence.QueryTimeoutException
 @ApplicationScoped
 class GetPokemonByNameHibernateAdapter(
     private val getPokemonByName: String = FileReader.execute("sql/getPokemonByName.sql")
-) : PokemonRepository, PanacheRepository<PokemonHibernateModel> {
+) : GetPokemonByNameRepository, PanacheRepository<PokemonHibernateModel> {
     private val log = LoggerFactory.getLogger(this::class.java)
 
-    override fun get(name: String): Pokemon {
+    override fun execute(name: String): Pokemon {
         try {
             log.info("Obteniendo pokemon con nombre: $name")
             val pokemonResult = this.getEntityManager()
