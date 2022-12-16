@@ -1,4 +1,4 @@
-package org.redbee.config
+package org.redbee.shared.error.model
 
 enum class ErrorDescription(val value: String) {
     UNHANDLED("Ha ocurrido un error inesperado."),

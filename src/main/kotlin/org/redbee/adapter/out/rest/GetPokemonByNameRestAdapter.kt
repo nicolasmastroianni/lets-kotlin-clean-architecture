@@ -6,7 +6,7 @@ import org.redbee.adapter.exception.NotAvailableException
 import org.redbee.adapter.out.rest.model.PokemonRestModel
 import org.redbee.application.port.out.GetPokemonByNameRepository
 import org.redbee.application.usecase.model.Pokemon
-import org.redbee.config.ErrorDescription
+import org.redbee.shared.error.model.ErrorDescription
 import org.slf4j.LoggerFactory
 import javax.enterprise.context.ApplicationScoped
 import javax.inject.Named

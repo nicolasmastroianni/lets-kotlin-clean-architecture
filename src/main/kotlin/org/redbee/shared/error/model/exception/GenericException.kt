@@ -1,8 +1,8 @@
-package org.redbee.config
+package org.redbee.shared.error.model.exception
 
 abstract class GenericException(
     private val description: String
-) : Throwable() {
+) : RuntimeException(description) {
 
     fun getDescription(): String {
         return this.description

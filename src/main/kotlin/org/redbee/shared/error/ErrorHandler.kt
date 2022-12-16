@@ -1,12 +1,13 @@
-package org.redbee.config
+package org.redbee.shared.error
 
-import ErrorResponse
+import org.redbee.shared.error.model.ErrorResponse
 import org.redbee.adapter.exception.NotAvailableException
 import org.redbee.adapter.exception.NotFoundException
 import org.redbee.adapter.exception.UnprocessableException
-import org.redbee.application.exception.BusinessException
+import org.redbee.shared.error.model.exception.BusinessException
 import javax.enterprise.context.ApplicationScoped
 import javax.ws.rs.core.Response
+import org.redbee.shared.error.model.ErrorDescription
 
 @ApplicationScoped
 class ErrorHandler {

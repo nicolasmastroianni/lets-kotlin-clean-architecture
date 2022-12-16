@@ -1,8 +1,9 @@
-package org.redbee.application.exception
+package org.redbee.shared.error.model.exception
 
 class BusinessException(
     private val description: String
-) : Throwable() {
+) : RuntimeException(description) {
+
     fun getDescription(): String {
         return this.description
     }

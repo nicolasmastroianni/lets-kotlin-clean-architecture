@@ -3,7 +3,7 @@ package org.redbee.adapter.`in`.controller
 import org.jboss.resteasy.reactive.server.ServerExceptionMapper
 import org.redbee.adapter.`in`.controller.model.PokemonResponse
 import org.redbee.application.port.`in`.GetPokemonByNameQuery
-import org.redbee.config.ErrorHandler
+import org.redbee.shared.error.ErrorHandler
 import org.slf4j.LoggerFactory
 import javax.ws.rs.GET
 import javax.ws.rs.Path
