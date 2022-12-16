@@ -6,20 +6,21 @@ import com.fasterxml.jackson.databind.PropertyNamingStrategies
 import com.fasterxml.jackson.databind.annotation.JsonNaming
 import io.quarkus.runtime.annotations.RegisterForReflection
 import org.redbee.application.usecase.model.Pokemon
-import java.util.*
+import java.util.Collections
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy::class)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @RegisterForReflection
 data class PokemonRestModel(
-     val name: String = "",
-     val abilities: List<AbilityInformationRestModel> = Collections.emptyList(),
-     val types: List<TypeInformationRestModel> = Collections.emptyList()
+    val name: String = "",
+    val abilities: List<AbilityInformationRestModel> = Collections.emptyList(),
+    val types: List<TypeInformationRestModel> = Collections.emptyList()
 ) {
 
-    fun toDomain() : Pokemon {
-        return Pokemon(name,
+    fun toDomain(): Pokemon {
+        return Pokemon(
+            name,
             abilities.map { a -> a.ability.name },
             types.map { t -> t.type.name }
         )

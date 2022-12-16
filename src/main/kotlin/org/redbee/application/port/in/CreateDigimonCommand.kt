@@ -6,7 +6,7 @@ interface CreateDigimonCommand {
     class Command(
         private val name: String
     ) {
-        fun getName() : String {
+        fun getName(): String {
             return this.name
         }
 

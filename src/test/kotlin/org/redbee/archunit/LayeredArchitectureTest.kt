@@ -10,6 +10,7 @@ private const val ADAPTERS = "Adapters"
 private const val APPLICATION = "Application"
 private const val USECASE = "UseCase"
 private const val PORT_IN = "Port In"
+private const val SHARED = "Shared"
 
 @AnalyzeClasses(packages = ["org.redbee"], importOptions = [ImportOption.DoNotIncludeTests::class])
 class LayeredArchitectureTest {
@@ -20,7 +21,8 @@ class LayeredArchitectureTest {
         .layer(APPLICATION).definedBy("org.redbee.application..")
         .layer(USECASE).definedBy("org.redbee.application.usecase")
         .layer(PORT_IN).definedBy("org.redbee.application.port.in")
-        .whereLayer(APPLICATION).mayOnlyBeAccessedByLayers(ADAPTERS)
-        .whereLayer(ADAPTERS).mayOnlyBeAccessedByLayers(USECASE)
-        .whereLayer(USECASE).mayOnlyBeAccessedByLayers(PORT_IN)
+        .layer(SHARED).definedBy("org.redbee.shared..")
+        .whereLayer(APPLICATION).mayOnlyBeAccessedByLayers(ADAPTERS, SHARED)
+        .whereLayer(ADAPTERS).mayOnlyBeAccessedByLayers(USECASE, SHARED)
+        .whereLayer(USECASE).mayOnlyBeAccessedByLayers(PORT_IN, SHARED)
 }

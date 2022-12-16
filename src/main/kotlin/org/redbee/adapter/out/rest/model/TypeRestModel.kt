@@ -11,6 +11,5 @@ import io.quarkus.runtime.annotations.RegisterForReflection
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @RegisterForReflection
 data class TypeRestModel(
-    val name : String = ""
-) {
-}
+    val name: String = ""
+)

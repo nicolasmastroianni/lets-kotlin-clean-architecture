@@ -12,6 +12,7 @@ repositories {
 val quarkusPlatformGroupId: String by project
 val quarkusPlatformArtifactId: String by project
 val quarkusPlatformVersion: String by project
+val ktlint by configurations.creating
 
 dependencies {
     implementation(enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}"))
@@ -33,8 +34,15 @@ dependencies {
     implementation("io.quarkus:quarkus-smallrye-openapi")
     testImplementation("io.quarkus:quarkus-junit5")
     testImplementation("io.rest-assured:rest-assured")
+
+    // Ktlint
+    ktlint("com.pinterest:ktlint:0.47.1")
+
+    // Arch unit
     testImplementation("com.tngtech.archunit:archunit:0.14.1")
     testImplementation("com.tngtech.archunit:archunit-junit5:0.14.1")
+
+
     // OpenTelemetry
     implementation("io.quarkus:quarkus-opentelemetry")
 
@@ -61,3 +69,20 @@ tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
     kotlinOptions.jvmTarget = JavaVersion.VERSION_11.toString()
     kotlinOptions.javaParameters = true
 }
+
+val ktlintCheck by tasks.creating(JavaExec::class) {
+    description = "Check Kotlin code style."
+    classpath = ktlint
+    main = "com.pinterest.ktlint.Main"
+    args = listOf("src/**/*.kt")
+}
+
+val ktlintFormat by tasks.creating(JavaExec::class) {
+    description = "Fix Kotlin code style deviations."
+    classpath = ktlint
+    main = "com.pinterest.ktlint.Main"
+    args = listOf("-F", "src/**/*.kt")
+}
+
+ktlintCheck.dependsOn(ktlintFormat)
+tasks.build.get().dependsOn(ktlintCheck)

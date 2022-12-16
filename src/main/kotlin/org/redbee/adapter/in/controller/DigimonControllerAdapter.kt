@@ -17,27 +17,27 @@ class DigimonControllerAdapter(
     private val getDigimonByNameQuery: GetDigimonByNameQuery
 ) {
     private val log = LoggerFactory.getLogger(this::class.java)
+
     @POST
-    fun create(body : DigimonRequest) : Response {
-        log.info("Se llama a api para creacion digimon con body :${body.toString()}")
+    fun create(body: DigimonRequest): Response {
+        log.info("Se llama a api para creacion digimon con body :$body")
         createDigimonCommand.execute(buildCommand(body))
         log.info("Digimon creado exitosamente")
         return Response.status(201).build()
     }
 
-    private fun buildCommand(body : DigimonRequest) : CreateDigimonCommand.Command{
+    private fun buildCommand(body: DigimonRequest): CreateDigimonCommand.Command {
         return CreateDigimonCommand.Command(body.getName())
     }
 
     @GET
     @Path("/{name}")
-    fun get(@PathParam("name") name : String) : DigimonResponse {
+    fun get(@PathParam("name") name: String): DigimonResponse {
         log.info("Obteniendo digimon por nombre: $name")
         val digimon = getDigimonByNameQuery.execute(name)
         val digimonResponse = DigimonResponse.fromDomain(digimon)
-        log.info("Digimon obtenido: ${digimon.toString()}")
+        log.info("Digimon obtenido: $digimon")
 
         return digimonResponse
     }
-
 }

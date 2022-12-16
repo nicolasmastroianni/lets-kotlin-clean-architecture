@@ -3,7 +3,7 @@ package org.redbee.adapter.`in`.controller
 import org.jboss.resteasy.reactive.server.ServerExceptionMapper
 import org.redbee.adapter.`in`.controller.model.PokemonResponse
 import org.redbee.application.port.`in`.GetPokemonByNameQuery
-import org.redbee.config.ErrorHandler
+import org.redbee.shared.error.ErrorHandler
 import org.slf4j.LoggerFactory
 import javax.ws.rs.GET
 import javax.ws.rs.Path
@@ -12,8 +12,8 @@ import javax.ws.rs.core.Response
 
 @Path("/api/v1/pokemons")
 class PokemonControllerAdapter(
-    private val getPokemonByNameQuery: GetPokemonByNameQuery,
-    ) {
+    private val getPokemonByNameQuery: GetPokemonByNameQuery
+) {
 
     private val log = LoggerFactory.getLogger(this::class.java)
 
@@ -29,6 +29,5 @@ class PokemonControllerAdapter(
     }
 
     @ServerExceptionMapper
-    fun mapException(e : Throwable) :Response = ErrorHandler.mapException(e)
-
+    fun mapException(e: Throwable): Response = ErrorHandler.mapException(e)
 }

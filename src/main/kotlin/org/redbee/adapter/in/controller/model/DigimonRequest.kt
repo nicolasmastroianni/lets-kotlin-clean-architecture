@@ -11,7 +11,7 @@ import com.fasterxml.jackson.databind.annotation.JsonNaming
 class DigimonRequest(
     private var name: String = ""
 ) {
-    fun getName() : String{
+    fun getName(): String {
         return this.name
     }
 

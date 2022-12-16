@@ -4,5 +4,5 @@ import org.redbee.application.usecase.model.Pokemon
 
 interface CreatePokemonRepository {
 
-    fun execute(pokemon : Pokemon) : Pokemon
+    fun execute(pokemon: Pokemon): Pokemon
 }

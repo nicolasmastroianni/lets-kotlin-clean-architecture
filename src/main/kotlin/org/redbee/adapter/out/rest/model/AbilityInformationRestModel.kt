@@ -11,6 +11,5 @@ import io.quarkus.runtime.annotations.RegisterForReflection
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @RegisterForReflection
 data class AbilityInformationRestModel(
-    var ability : AbilityRestModel = AbilityRestModel("")
-) {
-}
+    var ability: AbilityRestModel = AbilityRestModel("")
+)
