@@ -46,6 +46,18 @@ dependencies {
     // OpenTelemetry
     implementation("io.quarkus:quarkus-opentelemetry")
 
+
+    // KoTest
+    testImplementation("io.kotest:kotest-runner-junit5:5.5.4")
+    testImplementation("io.kotest:kotest-assertions-core:5.5.4")
+    testImplementation("io.kotest:kotest-property:5.5.4")
+
+
+    // Mockk
+    testImplementation("io.mockk:mockk:1.13.3")
+    testImplementation("io.quarkiverse.mockk:quarkus-junit5-mockk:1.1.1")
+
+
 }
 
 group = "org.redbee"
@@ -58,6 +70,7 @@ java {
 
 tasks.withType<Test> {
     systemProperty("java.util.logging.manager", "org.jboss.logmanager.LogManager")
+    useJUnitPlatform()
 }
 allOpen {
     annotation("javax.ws.rs.Path")
